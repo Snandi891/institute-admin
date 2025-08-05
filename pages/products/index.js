@@ -27,7 +27,7 @@ export default function Courses() {
                 All Courses
               </h1>
               <p className="mt-1.5 text-md text-gray-500">
-                Let's create a new course
+                Let&apos;s create a new course
               </p>
             </div>
             <div className="flex items-center gap-4">
