@@ -239,6 +239,7 @@ export default function ProductForm({
         />
 
         {/* Images */}
+        {/* Images */}
         <label className="block mb-2 text-md font-medium text-gray-900">
           Course Images
         </label>
@@ -250,12 +251,23 @@ export default function ProductForm({
           >
             {!!images?.length &&
               images.map((link, index) => (
-                <div key={index} className="h-24 w-24 relative">
+                <div key={index} className="h-24 w-24 relative group">
                   <img
                     src={link}
                     className="rounded-lg border object-cover h-full w-full"
                     alt="Course"
                   />
+                  {/* Delete button inside image */}
+                  <button
+                    type="button"
+                    onClick={() =>
+                      setImages((prev) => prev.filter((_, i) => i !== index))
+                    }
+                    className="absolute top-1 right-1 bg-red-600 text-white text-xs rounded-full px-1 py-0.5 opacity-0 group-hover:opacity-100 transition"
+                    title="Delete image"
+                  >
+                    ×
+                  </button>
                 </div>
               ))}
           </ReactSortable>
